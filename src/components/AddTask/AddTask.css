@@ -1,0 +1,75 @@
+.Form {
+    width: 100%;
+    height: 150px;
+    margin: 30px 0px auto;
+    border-bottom: 0.5px solid rgb(233, 224, 224);
+    position: sticky;
+}
+
+.Form textarea {
+    display: inline-block;
+    overflow: auto;
+    width: 200px;
+    height: 100px;
+    border: 1.5px solid rgb(197, 197, 197);
+    resize: none;
+    outline: none;
+    font-size: larger;
+    font-family: inherit;
+    font-weight: bolder;
+    color: rgb(83, 83, 83);
+    border-radius: 5px;
+    margin: 0px 20px auto;
+}
+
+
+.Form textarea:focus {
+    border : 2px solid rgb(6, 149, 238);
+    border-radius: 5px;
+}
+
+@media (min-width: 500px) {
+    .Form textarea {
+        width: 40%;
+    }
+}
+
+.Button {
+    width: 70px;
+    height: 50px;
+    display: inline-block;
+    border-radius: 8%;
+    outline: none;
+    background-color: rgb(6, 149, 238);
+    border: 0.5px solid aliceblue;
+    color: rgb(245, 241, 241);
+    font-family: inherit;
+    font-weight: 600;
+}
+
+.Button:focus {
+    border: none;
+    outline: none;
+}
+
+.Button:hover {
+    border: 1.5px solid rgb(6, 149, 238);
+    background-color: transparent;
+    box-shadow: 0px 3px 3px rgb(102, 102, 102);
+    color: rgb(6, 149, 238)
+}
+
+.Button:disabled {
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+  cursor: unset;
+}
+
+.Error {
+    margin: auto;
+    font-size: larger;
+    color: red;
+    font-weight: bolder;
+    text-align: center;
+}
