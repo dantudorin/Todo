@@ -10,13 +10,12 @@ const reducer = (state = initialState, action) => {
         case actionType.ADD_TODO:
 
             const task = {
+                id : !state.tasks ? 0 : state.tasks.length,
                 objective: action.objective,
                 done: false
             }
 
             if (!state.tasks) {
-                console.log(state.tasks)
-                console.log('aici');
                 let firstTask = [].concat(task);
                 localStorage.setItem('tasks', JSON.stringify(firstTask));
 
@@ -32,6 +31,13 @@ const reducer = (state = initialState, action) => {
                 tasks : tasks
             }
 
+        case actionType.CHANGE_DONE_STATE : 
+            let changedTasks = [].concat(state.tasks);
+            changedTasks[action.id].done = ! changedTasks[action.id].done;
+
+            return {
+                tasks : changedTasks
+            }
 
         default: return state
     }

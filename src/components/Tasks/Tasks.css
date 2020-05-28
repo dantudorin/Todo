@@ -1,0 +1,19 @@
+.CardColumn {
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.DoneButton {
+    width: 40%;
+    font-size: small;
+    margin: auto;
+    display: inline-block;
+}
+
+.RenameButton {
+    width: 40%;
+    font-size: small;
+    margin: auto;
+    display: inline-block;
+}

@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from '../../components/Header/Header';
 import AddTask from '../../components/AddTask/AddTask';
+import Tasks from '../../components/Tasks/Tasks';
 
 const Todo = () => {
 
@@ -8,6 +9,7 @@ const Todo = () => {
             <div>
                 <Header />
                 <AddTask />
+                <Tasks />
             </div>
 
         );
