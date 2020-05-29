@@ -1,0 +1,26 @@
+.CardColumn {
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.CustomButton {
+    width: 40%;
+    font-size: small;
+    margin: auto;
+    margin-right: 5px;
+    display: inline-block;
+}
+
+.TextArea {
+    width: 100%;
+    height: 200px;
+    overflow: auto;
+    resize: none;
+    outline: none;
+    border: none;
+}
+
+.TextArea:focus {
+    border: 1.7px solid orange;
+}
