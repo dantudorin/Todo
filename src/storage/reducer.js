@@ -43,10 +43,10 @@ const reducer = (state = initialState, action) => {
         case actionType.CHANGE_OBJECTIVE : 
             let changedObjective = [].concat(state.tasks);
             changedObjective[action.task.id].objective = action.task.objective;
-            console.log('de aici a plecat');    
+               
             localStorage.setItem('tasks', JSON.stringify(changedObjective));
             return {
-                tasks : changedTasks
+                tasks : changedObjective
             }
 
         default: return state

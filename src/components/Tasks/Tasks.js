@@ -13,9 +13,8 @@ const Tasks = (props) => {
                 <div className='row'>
                     {props.tasks ? props.tasks.map(task => {
                         return (
-                            <div className='col-sm-12 col-lg-4 '>
-                                <Task 
-                                key = {task.id} 
+                            <div key = {task.id} className='col-sm-12 col-lg-4 '>
+                                <Task  
                                 task = {task} 
                                 changeDoneState={props.changeDoneState}
                                 changeObjective={props.changeObjective}

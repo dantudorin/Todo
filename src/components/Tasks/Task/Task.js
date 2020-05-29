@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import './Task.css';
 import { Card, Button } from 'react-bootstrap';
@@ -8,9 +8,6 @@ import * as Yup from 'yup';
 const Task = (props) => {
 
     const [renameState, setRenameState] = useState(false);
-    const [renamedState, setRenamedState] = useState(false);
-
-    useEffect(() => {}, [renamedState]);
 
     const formik = useFormik({
         initialValues: {
@@ -22,9 +19,8 @@ const Task = (props) => {
                 .required('Required'),
         }),
         onSubmit: values => {
-            alert(JSON.stringify(values, null, 2));
             props.changeObjective({ id: props.task.id, objective: values.newTask, done: props.task.done });
-            setRenamedState(!renamedState);
+            setRenameState(!renameState);
         },
     });
 
@@ -48,10 +44,6 @@ const Task = (props) => {
         );
     }
 
-    const confirmRename = () => {
-        console.log('Confirmed.');
-    }
-
     const rename = () => {
         setRenameState(!renameState);
     }
@@ -66,7 +58,7 @@ const Task = (props) => {
                 </Card.Text>
                 <Button className='CustomButton' variant="outline-dark"
                     onClick={props.task.done ? null : () => { props.changeDoneState(props.task.id) }}
-                    disabled={props.task.done ? true : null}>{props.task.done ? "DONE" : "NOT DONE"}
+                    disabled={props.task.done ? true : null}>Done
                 </Button>
                 {renameBtn}
             </div>

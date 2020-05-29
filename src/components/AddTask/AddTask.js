@@ -16,7 +16,6 @@ const AddTask = (props) => {
         onSubmit: values => {
             alert('Task : ' + JSON.stringify(values));
             props.addTasks(values.task)
-            console.log(props.tasks);
         }
     });
 
