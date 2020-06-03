@@ -24,3 +24,9 @@
 .TextArea:focus {
     border: 1.7px solid orange;
 }
+
+.Normal {
+    background-color: rgb(235, 26, 26);
+    width: 100%;
+    height: 100%;
+}

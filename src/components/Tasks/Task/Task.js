@@ -65,6 +65,16 @@ const Task = (props) => {
         );
     }
 
+    const cardheaderImportance = () => {
+        switch (props.task.importance) {
+            
+            case 'Very important' : return ('rgba(255, 221, 0, 1)');
+            case 'High' : return ('rgba(255, 119, 0, 1)');
+            case 'Trivial' : return ('rgba(255, 0, 0, 1)');
+            default : return ('aliceblue');
+        }
+    }
+
     return (
         <Card className="CardColumn" style={{
             width: '18rem',
@@ -72,7 +82,9 @@ const Task = (props) => {
             border: props.task.done ? '2px solid green' : null,
             background: props.task.done ? 'rgba(242, 177, 13, 0.07)' : null
         }} >
-            <Card.Header>Normal</Card.Header>
+            <Card.Header style={{backgroundColor : cardheaderImportance(), fontWeight : 'bold', color : 'rgba(33, 33, 33, 1)'}}>
+                {props.task.importance}
+            </Card.Header>
             {renameState ? renderRename() : defaultRender()}
 
         </Card>

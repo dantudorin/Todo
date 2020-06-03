@@ -12,6 +12,7 @@ const reducer = (state = initialState, action) => {
             const task = {
                 id : !state.tasks ? 0 : state.tasks.length,
                 objective: action.objective,
+                importance: action.importance,
                 done: false
             }
 
