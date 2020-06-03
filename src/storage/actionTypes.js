@@ -1,3 +1,4 @@
 export const ADD_TODO = 'ADD_TODO';
 export const CHANGE_DONE_STATE = 'CHANGE_DONE_STATE';
 export const CHANGE_OBJECTIVE = 'CHANGE_OBJECTIVE';
+export const CHANGE_FILTER = 'CHANGE_FILTER';

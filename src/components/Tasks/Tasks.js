@@ -11,7 +11,7 @@ const Tasks = (props) => {
             {!props.tasks ? <div className="Empty">You don't have any tasks yet.</div> : null}
             <div className='container'>
                 <div className='row'>
-                    {props.tasks ? props.tasks.map(task => {
+                    {props.tasks ? props.tasks.filter(task => task.importance === props.filter || props.filter === 'No filter').map(task => {
                         return (
                             <div key = {task.id} className='col-sm-12 col-lg-4 '>
                                 <Task  
@@ -42,6 +42,10 @@ const mapDispatchToProps = dispatch => {
     }
 }
 
-const mapStateToProps = (state) => ({ tasks: state.tasks });
+const mapStateToProps = (state) => (
+    { 
+        tasks: state.tasks,
+        filter: state.filter 
+    });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Tasks);

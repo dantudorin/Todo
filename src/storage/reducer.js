@@ -1,6 +1,7 @@
 import * as actionType from './actionTypes';
 
 const initialState = {
+    filter : 'No filter',
     tasks: JSON.parse(localStorage.getItem("tasks"))
 }
 
@@ -21,6 +22,7 @@ const reducer = (state = initialState, action) => {
                 localStorage.setItem('tasks', JSON.stringify(firstTask));
 
                 return {
+                    filter : state.filter,
                     tasks : firstTask
                 }
             }
@@ -29,6 +31,7 @@ const reducer = (state = initialState, action) => {
             localStorage.setItem('tasks', JSON.stringify(tasks));
 
             return {
+                filter : state.filter,
                 tasks : tasks
             }
 
@@ -38,6 +41,7 @@ const reducer = (state = initialState, action) => {
 
             localStorage.setItem('tasks', JSON.stringify(changedTasks));
             return {
+                filter : state.filter,
                 tasks : changedTasks
             }
         
@@ -47,7 +51,14 @@ const reducer = (state = initialState, action) => {
                
             localStorage.setItem('tasks', JSON.stringify(changedObjective));
             return {
+                filter : state.filter,
                 tasks : changedObjective
+            }
+        
+        case actionType.CHANGE_FILTER : 
+            return {
+                filter : action.filter,
+                tasks : [].concat(state.tasks)
             }
 
         default: return state
