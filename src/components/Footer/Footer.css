@@ -1,0 +1,48 @@
+.Footer {
+    width: 100%;
+    height: 80px;
+    background-color: rgba(246, 192, 106, 0.979);
+    padding: 5px;
+    position: fixed;
+    bottom: 0%;
+}
+.SocialGroup {
+    font-family: inherit;
+    align-items: center;
+    display: block;
+    position: relative;
+    top: 30%;
+    transform: translateY(-30%);
+}
+
+.SocialGroup p {
+    display: inline;
+    font-size: larger;
+    font-weight: bold;
+    margin-right: 20px;
+    color: rgb(102, 102, 102);
+}
+
+.SocialGroup a img{
+    outline: none;
+    border: none;
+    background: none;
+    text-decoration: none;
+}
+.Icon {
+    text-decoration: none;
+    width: 40px;
+    height: 40px;
+    margin: 0 10px auto;
+    border-style: none;
+}
+
+.Icon:hover {
+    cursor: pointer;
+    box-shadow: 0px 5px 0px rgb(4, 110, 172);
+}
+
+.Copyright {
+    font-weight: bold;
+    color: rgb(102, 102, 102);;
+}

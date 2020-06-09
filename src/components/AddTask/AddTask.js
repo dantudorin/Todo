@@ -39,7 +39,7 @@ const AddTask = (props) => {
             {formik.touched.importance && formik.errors.importance ? (
                 <div className="Error">{formik.errors.importance}</div>
             ) : null}
-            <textarea
+            <textarea className="TextArea"
                 style={formik.touched.task && formik.errors.task ? { border: '1.5px solid red' } : null}
                 name="task"
                 type="textarea"
