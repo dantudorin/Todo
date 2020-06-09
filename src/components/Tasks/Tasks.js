@@ -11,19 +11,47 @@ const Tasks = (props) => {
         if(filteredTasks.length === 0) {
             return  <div className="Empty">You don't have any tasks yet.</div>
         }
-        return filteredTasks.map(task => {
-                                return (
-                                    <div key = {task.id} className='col-sm-12 col-lg-4 '>
-                                        <Task  
-                                        task = {task} 
-                                        changeDoneState={props.changeDoneState}
-                                        changeObjective={props.changeObjective}
-                                        />
-                                    </div>
-                                )})
+        return (
+            <div className="Tasks">        
+                <div className='container'>
+                    <div className='row'>
+                        {filteredTasks.map(task => {
+                                            return (
+                                                <div key = {task.id} className='col-sm-12 col-lg-4 '>
+                                                    <Task  
+                                                    task = {task} 
+                                                    changeDoneState={props.changeDoneState}
+                                                    changeObjective={props.changeObjective}
+                                                    />
+                                                </div>
+                                            )})}
+                    </div>
+                </div>
+            </div>
+        );
     }else {
         return <div className="Empty">You don't have any tasks yet.</div>;
     }
+    // return (
+        // <div className="Tasks">        
+        //     <div className='container'>
+        //         <div className='row'>
+    //                 {props.tasks  ? props.tasks.filter(task => task.importance === props.filter || props.filter === 'No filter').map(task => {
+    //                     return (
+    //                         <div key = {task.id} className='col-sm-12 col-lg-4 '>
+    //                             <Task  
+    //                             task = {task} 
+    //                             changeDoneState={props.changeDoneState}
+    //                             changeObjective={props.changeObjective}
+    //                             />
+    //                         </div>
+    //                     );
+    //                 }) : <div className="Empty">You don't have any tasks yet.</div>}
+    //                 {!props.tasks ?  <div className="Empty">You don't have any tasks yet.</div> : null}
+    //             </div>
+    //         </div>
+    //     </div>
+    // );
 }
 
 const mapDispatchToProps = dispatch => {
