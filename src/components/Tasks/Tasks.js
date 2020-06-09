@@ -5,27 +5,25 @@ import './Tasks.css';
 import Task from './Task/Task';
 
 const Tasks = (props) => {
-
-    return (
-        <div className="Tasks">
-            {!props.tasks ? <div className="Empty">You don't have any tasks yet.</div> : null}
-            <div className='container'>
-                <div className='row'>
-                    {props.tasks ? props.tasks.filter(task => task.importance === props.filter || props.filter === 'No filter').map(task => {
-                        return (
-                            <div key = {task.id} className='col-sm-12 col-lg-4 '>
-                                <Task  
-                                task = {task} 
-                                changeDoneState={props.changeDoneState}
-                                changeObjective={props.changeObjective}
-                                />
-                            </div>
-                        );
-                    }) : null}
-                </div>
-            </div>
-        </div>
-    );
+    if (props.tasks) {
+        const filteredTasks = props.tasks.filter(task => task.importance === props.filter || props.filter === 'No filter');
+        
+        if(filteredTasks.length === 0) {
+            return  <div className="Empty">You don't have any tasks yet.</div>
+        }
+        return filteredTasks.map(task => {
+                                return (
+                                    <div key = {task.id} className='col-sm-12 col-lg-4 '>
+                                        <Task  
+                                        task = {task} 
+                                        changeDoneState={props.changeDoneState}
+                                        changeObjective={props.changeObjective}
+                                        />
+                                    </div>
+                                )})
+    }else {
+        return <div className="Empty">You don't have any tasks yet.</div>;
+    }
 }
 
 const mapDispatchToProps = dispatch => {

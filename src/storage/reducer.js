@@ -55,10 +55,18 @@ const reducer = (state = initialState, action) => {
                 tasks : changedObjective
             }
         
-        case actionType.CHANGE_FILTER : 
+        case actionType.CHANGE_FILTER :
+            const filter = action.filter;
+            const taks = null;    
+            
+            if(state.tasks)  
+                return {
+                    filter,
+                    tasks : [...state.tasks]
+                }
             return {
-                filter : action.filter,
-                tasks : [].concat(state.tasks)
+                filter,
+                taks
             }
 
         default: return state
